@@ -68,7 +68,7 @@ function copyAKData() {
     let dataString = 'Расход БК АК-74/5.45:\n';
 
     const keys = [
-        { id: 'pm', label: 'ПМ' },
+        { id: 'ps', label: 'ПС' },
         { id: 'ts', label: 'ТС' },
         { id: 'targeting-ak', label: 'Цілевказівку дав' },
         { id: 'shooter-ak', label: 'Стрільбу вів' }
@@ -91,7 +91,7 @@ function shareAKData() {
     let dataString = 'Расход БК АК-74/5.45:\n';
 
     const keys = [
-        { id: 'pm', label: 'ПМ' },
+        { id: 'ps', label: 'ПС' },
         { id: 'ts', label: 'ТС' },
         { id: 'targeting-ak', label: 'Цілевказівку дав' },
         { id: 'shooter-ak', label: 'Стрільбу вів' }
@@ -184,7 +184,7 @@ function copyAllData() {
     ];
 
     const akSectionKeys = [
-        { id: 'pm', label: 'ПМ' },
+        { id: 'ps', label: 'ПС' },
         { id: 'ts', label: 'ТС' },
         { id: 'targeting-ak', label: 'Цілевказівку дав' },
         { id: 'shooter-ak', label: 'Стрільбу вів' }
@@ -244,7 +244,7 @@ function shareAllData() {
     ];
 
     const akSectionKeys = [
-        { id: 'pm', label: 'ПМ' },
+        { id: 'ps', label: 'ПС' },
         { id: 'ts', label: 'ТС' },
         { id: 'targeting-ak', label: 'Цілевказівку дав' },
         { id: 'shooter-ak', label: 'Стрільбу вів' }
