@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма вводу даних</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Форма для вводу даних</h2>
+        <form id="dataForm">
+
+            <!-- Основная секция -->
+            <label for="post">Пост:</label>
+            <input type="text" id="post" name="post" required>
+            
+            <label for="settlement">Населений пункт:</label>
+            <input type="text" id="settlement" name="settlement" required>
+            
+            <label for="time">Час:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="target-number">Ном.цілі:</label>
+            <input type="text" id="target-number" name="target-number" required>
+            
+            <label for="target-name">Назва цілі:</label>
+            <input type="text" id="target-name" name="target-name" required>
+            
+            <label for="azimuth">Азимут:</label>
+            <input type="text" id="azimuth" name="azimuth" required>
+            
+            <label for="course">Курс:</label>
+            <input type="text" id="course" name="course" required>
+            
+            <label for="altitude">Висота:</label>
+            <input type="text" id="altitude" name="altitude" required>
+            
+            <label for="distance">Дистанція:</label>
+            <input type="text" id="distance" name="distance" required>
+            
+            <label for="results">Результати роботи:</label>
+            <input type="text" id="results" name="results" required>
+
+            <!-- Кнопки для основной секции -->
+            <div class="buttons-container">
+                <button type="button" onclick="copyFormData()">Копіювати</button>
+                <button type="button" onclick="shareFormData()">Поділитися</button>
+            </div>
+
+            <!-- Первая секция -->
+            <h3>Расход БК АК-74/5.45:</h3>
+
+            <label for="pm">ПМ:</label>
+            <input type="text" id="pm" name="pm" required>
+
+            <label for="ts">ТС:</label>
+            <input type="text" id="ts" name="ts" required>
+
+            <label for="shooter-ak">Стрільбу вів:</label>
+            <input type="text" id="shooter-ak" name="shooter-ak" required>
+
+            <!-- Кнопки для первой секции -->
+            <div class="buttons-container">
+                <button type="button" onclick="copyAKData()">Копіювати</button>
+                <button type="button" onclick="shareAKData()">Поділитися</button>
+            </div>
+
+            <!-- Вторая секция -->
+            <h3>Розхід Б.К. ПЗРК Игла-1:</h3>
+
+            <label for="bk-usage">НДЖ:</label>
+            <input type="text" id="bk-usage" name="bk-usage" required>
+
+            <label for="missile">Ракета:</label>
+            <input type="text" id="missile" name="missile" required>
+
+            <label for="targeting">Цілевказівку дав:</label>
+            <input type="text" id="targeting" name="targeting" required>
+
+            <label for="shooter">Стрілець:</label>
+            <input type="text" id="shooter" name="shooter" required>
+
+            <!-- Кнопки для второй секции -->
+            <div class="buttons-container">
+                <button type="button" onclick="copyIglaData()">Копіювати</button>
+                <button type="button" onclick="shareIglaData()">Поділитися</button>
+            </div>
+
+            <!-- Кнопки "Копіювати все" и "Поділитися всім" внизу страницы -->
+            <div class="buttons-container">
+                <button type="button" onclick="copyAllData()">Копіювати все</button>
+                <button type="button" onclick="shareAllData()">Поділитися всім</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        function copyFormData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Основна секція:\n';
+
+            const keys = [
+                { id: 'post', label: 'Пост' },
+                { id: 'settlement', label: 'Населений пункт' },
+                { id: 'time', label: 'Час' },
+                { id: 'date', label: 'Дата' },
+                { id: 'target-number', label: 'Ном.цілі' },
+                { id: 'target-name', label: 'Назва цілі' },
+                { id: 'azimuth', label: 'Азимут' },
+                { id: 'course', label: 'Курс' },
+                { id: 'altitude', label: 'Висота' },
+                { id: 'distance', label: 'Дистанція' },
+                { id: 'results', label: 'Результати роботи' }
+            ];
+
+            keys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            navigator.clipboard.writeText(dataString).then(() => {
+                alert('Дані основної секції скопійовано до буферу обміну!');
+            });
+        }
+
+        function shareFormData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Основна секція:\n';
+
+            const keys = [
+                { id: 'post', label: 'Пост' },
+                { id: 'settlement', label: 'Населений пункт' },
+                { id: 'time', label: 'Час' },
+                { id: 'date', label: 'Дата' },
+                { id: 'target-number', label: 'Ном.цілі' },
+                { id: 'target-name', label: 'Назва цілі' },
+                { id: 'azimuth', label: 'Азимут' },
+                { id: 'course', label: 'Курс' },
+                { id: 'altitude', label: 'Висота' },
+                { id: 'distance', label: 'Дистанція' },
+                { id: 'results', label: 'Результати роботи' }
+            ];
+
+            keys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Дані основної секції',
+                    text: dataString,
+                }).catch(error => console.error('Помилка при спробі поділитися даними:', error));
+            } else {
+                alert('Ваш браузер не підтримує функцію поділитися.');
+            }
+        }
+
+        function copyAKData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Расход БК АК-74/5.45:\n';
+
+            const keys = [
+                { id: 'pm', label: 'ПМ' },
+                { id: 'ts', label: 'ТС' },
+                { id: 'shooter-ak', label: 'Стрільбу вів' }
+            ];
+
+            keys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            navigator.clipboard.writeText(dataString).then(() => {
+                alert('Дані першої секції скопійовано до буферу обміну!');
+            });
+        }
+
+        function shareAKData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Расход БК АК-74/5.45:\n';
+
+            const keys = [
+                { id: 'pm', label: 'ПМ' },
+                { id: 'ts', label: 'ТС' },
+                { id: 'shooter-ak', label: 'Стрільбу вів' }
+            ];
+
+            keys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Дані першої секції',
+                    text: dataString,
+                }).catch(error => console.error('Помилка при спробі поділитися даними:', error));
+            } else {
+                alert('Ваш браузер не підтримує функцію поділитися.');
+            }
+        }
+
+        function copyIglaData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Розхід Б.К. ПЗРК Игла-1:\n';
+
+            const keys = [
+                { id: 'bk-usage', label: 'НДЖ' },
+                { id: 'missile', label: 'Ракета' },
+                { id: 'targeting', label: 'Цілевказівку дав' },
+                { id: 'shooter', label: 'Стрілець' }
+            ];
+
+            keys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            navigator.clipboard.writeText(dataString).then(() => {
+                alert('Дані другої секції скопійовано до буферу обміну!');
+            });
+        }
+
+        function shareIglaData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Розхід Б.К. ПЗРК Игла-1:\n';
+
+            const keys = [
+                { id: 'bk-usage', label: 'НДЖ' },
+                { id: 'missile', label: 'Ракета' },
+                { id: 'targeting', label: 'Цілевказівку дав' },
+                { id: 'shooter', label: 'Стрілець' }
+            ];
+
+            keys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Дані другої секції',
+                    text: dataString,
+                }).catch(error => console.error('Помилка при спробі поділитися даними:', error));
+            } else {
+                alert('Ваш браузер не підтримує функцію поділитися.');
+            }
+        }
+
+        function copyAllData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Основна секція:\n';
+
+            const mainKeys = [
+                { id: 'post', label: 'Пост' },
+                { id: 'settlement', label: 'Населений пункт' },
+                { id: 'time', label: 'Час' },
+                { id: 'date', label: 'Дата' },
+                { id: 'target-number', label: 'Ном.цілі' },
+                { id: 'target-name', label: 'Назва цілі' },
+                { id: 'azimuth', label: 'Азимут' },
+                { id: 'course', label: 'Курс' },
+                { id: 'altitude', label: 'Висота' },
+                { id: 'distance', label: 'Дистанція' },
+                { id: 'results', label: 'Результати роботи' }
+            ];
+
+            mainKeys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            dataString += '\nРасход БК АК-74/5.45:\n';
+
+            const akKeys = [
+                { id: 'pm', label: 'ПМ' },
+                { id: 'ts', label: 'ТС' },
+                { id: 'shooter-ak', label: 'Стрільбу вів' }
+            ];
+
+            akKeys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            dataString += '\nРозхід Б.К. ПЗРК Игла-1:\n';
+
+            const iglaKeys = [
+                { id: 'bk-usage', label: 'НДЖ' },
+                { id: 'missile', label: 'Ракета' },
+                { id: 'targeting', label: 'Цілевказівку дав' },
+                { id: 'shooter', label: 'Стрілець' }
+            ];
+
+            iglaKeys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            navigator.clipboard.writeText(dataString).then(() => {
+                alert('Всі дані скопійовано до буферу обміну!');
+            });
+        }
+
+        function shareAllData() {
+            const form = document.getElementById('dataForm');
+            let dataString = 'Основна секція:\n';
+
+            const mainKeys = [
+                { id: 'post', label: 'Пост' },
+                { id: 'settlement', label: 'Населений пункт' },
+                { id: 'time', label: 'Час' },
+                { id: 'date', label: 'Дата' },
+                { id: 'target-number', label: 'Ном.цілі' },
+                { id: 'target-name', label: 'Назва цілі' },
+                { id: 'azimuth', label: 'Азимут' },
+                { id: 'course', label: 'Курс' },
+                { id: 'altitude', label: 'Висота' },
+                { id: 'distance', label: 'Дистанція' },
+                { id: 'results', label: 'Результати роботи' }
+            ];
+
+            mainKeys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            dataString += '\nРасход БК АК-74/5.45:\n';
+
+            const akKeys = [
+                { id: 'pm', label: 'ПМ' },
+                { id: 'ts', label: 'ТС' },
+                { id: 'shooter-ak', label: 'Стрільбу вів' }
+            ];
+
+            akKeys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            dataString += '\nРозхід Б.К. ПЗРК Игла-1:\n';
+
+            const iglaKeys = [
+                { id: 'bk-usage', label: 'НДЖ' },
+                { id: 'missile', label: 'Ракета' },
+                { id: 'targeting', label: 'Цілевказівку дав' },
+                { id: 'shooter', label: 'Стрілець' }
+            ];
+
+            iglaKeys.forEach(({ id, label }) => {
+                const value = form[id].value;
+                if (value) {
+                    dataString += `${label}: ${value}\n`;
+                }
+            });
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Всі дані',
+                    text: dataString,
+                }).catch(error => console.error('Помилка при спробі поділитися даними:', error));
+            } else {
+                alert('Ваш браузер не підтримує функцію поділитися.');
+            }
+        }
+    </script>
+</body>
+</html>
