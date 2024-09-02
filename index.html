@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма Вводу Даних</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Форма Вводу Даних</h1>
+        <form id="dataForm">
+            <label for="post">Пост:</label>
+            <input type="text" id="post" name="post">
+
+            <label for="settlement">Населений пункт:</label>
+            <input type="text" id="settlement" name="settlement">
+
+            <label for="time">Час:</label>
+            <input type="time" id="time" name="time">
+
+            <label for="date">Дата:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="target-number">Ном.цілі:</label>
+            <input type="text" id="target-number" name="target-number">
+
+            <label for="target-name">Назва цілі:</label>
+            <input type="text" id="target-name" name="target-name">
+
+            <label for="azimuth">Азимут:</label>
+            <input type="text" id="azimuth" name="azimuth">
+
+            <label for="course">Курс:</label>
+            <input type="text" id="course" name="course">
+
+            <label for="altitude">Висота:</label>
+            <input type="text" id="altitude" name="altitude">
+
+            <label for="distance">Дистанція:</label>
+            <input type="text" id="distance" name="distance">
+
+            <label for="results">Результати роботи:</label>
+            <input type="text" id="results" name="results">
+
+            <div class="button-group">
+                <button type="button" onclick="copyMainData()">Копіювати</button>
+                <button type="button" onclick="shareMainData()">Поділитися</button>
+            </div>
+
+            <h2>Расход БК АК-74/5.45:</h2>
+            <label for="pm">ПМ:</label>
+            <input type="text" id="pm" name="pm">
+
+            <label for="ts">ТС:</label>
+            <input type="text" id="ts" name="ts">
+
+            <label for="targeting-ak">Цілевказівку дав:</label>
+            <input type="text" id="targeting-ak" name="targeting-ak">
+
+            <label for="shooter-ak">Стрільбу вів:</label>
+            <input type="text" id="shooter-ak" name="shooter-ak">
+
+            <div class="button-group">
+                <button type="button" onclick="copyAKData()">Копіювати</button>
+                <button type="button" onclick="shareAKData()">Поділитися</button>
+            </div>
+
+            <h2>Розхід Б.К. ПЗРК Игла-1:</h2>
+            <label for="bk-usage">НДЖ:</label>
+            <input type="text" id="bk-usage" name="bk-usage">
+
+            <label for="missile">Ракета:</label>
+            <input type="text" id="missile" name="missile">
+
+            <label for="targeting">Цілевказівку дав:</label>
+            <input type="text" id="targeting" name="targeting">
+
+            <label for="shooter">Стрілець:</label>
+            <input type="text" id="shooter" name="shooter">
+
+            <div class="button-group">
+                <button type="button" onclick="copyIglaData()">Копіювати</button>
+                <button type="button" onclick="shareIglaData()">Поділитися</button>
+            </div>
+
+            <div class="button-group">
+                <button type="button" onclick="copyAllData()">Копіювати все</button>
+                <button type="button" onclick="shareAllData()">Поділитися всім</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="scripts.js"></script>
+</html>
