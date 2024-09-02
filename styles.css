@@ -23,6 +23,7 @@ h1, h2 {
 label {
     display: block;
     margin: 10px 0 5px;
+    font-size: 16px;
 }
 
 input[type="text"], input[type="time"], input[type="date"] {
