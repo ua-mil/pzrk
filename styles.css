@@ -23,38 +23,43 @@ h1, h2 {
 label {
     display: block;
     margin: 10px 0 5px;
-    font-size: 14px;
 }
 
-input[type="text"], input[type="time"], input[type="date"] {
-    width: 95%;
+input[type="text"], input[type="time"], input[type="date"], input[type="number"] {
+    width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 10px;
+    border: 1px solid #b0b0b0;
     border-radius: 5px;
-    border: 1px solid #555;
-    background-color: #4a4a4a;
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+.input-with-unit {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-unit .unit {
+    margin-left: 5px;
     color: #ffffff;
 }
 
 .button-group {
-    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
 }
 
 button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #5a5a5a;
+    background-color: #5c5c5c;
     color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #6a6a6a;
-}
-
-button:last-child {
-    margin-right: 0;
+    background-color: #727272;
 }
