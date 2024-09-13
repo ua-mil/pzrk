@@ -65,7 +65,7 @@ function shareMainData() {
 
 function copyAKData() {
     const form = document.getElementById('dataForm');
-    let dataString = 'Расход БК АК-74/5.45:\n';
+    let dataString = 'Витрата БК АК-74/5.45:\n';
 
     const keys = [
         { id: 'ps', label: 'ПС' },
@@ -82,13 +82,13 @@ function copyAKData() {
     });
 
     navigator.clipboard.writeText(dataString).then(() => {
-        alert('Дані секції "Расход БК АК-74/5.45" скопійовано до буферу обміну!');
+        alert('Дані секції "Витрата БК АК-74/5.45" скопійовано до буферу обміну!');
     });
 }
 
 function shareAKData() {
     const form = document.getElementById('dataForm');
-    let dataString = 'Расход БК АК-74/5.45:\n';
+    let dataString = 'Витрата БК АК-74/5.45:\n';
 
     const keys = [
         { id: 'ps', label: 'ПС' },
@@ -106,7 +106,7 @@ function shareAKData() {
 
     if (navigator.share) {
         navigator.share({
-            title: 'Дані секції "Расход БК АК-74/5.45"',
+            title: 'Дані секції "Витрата БК АК-74/5.45"',
             text: dataString,
         }).catch(error => console.error('Помилка при спробі поділитися даними:', error));
     } else {
@@ -116,7 +116,7 @@ function shareAKData() {
 
 function copyIglaData() {
     const form = document.getElementById('dataForm');
-    let dataString = 'Розхід Б.К. ПЗРК Игла-1:\n';
+    let dataString = 'Витрата БК ПЗРК Игла-1:\n';
 
     const keys = [
         { id: 'bk-usage', label: 'НДЖ' },
@@ -133,13 +133,13 @@ function copyIglaData() {
     });
 
     navigator.clipboard.writeText(dataString).then(() => {
-        alert('Дані секції "Розхід Б.К. ПЗРК Игла-1" скопійовано до буферу обміну!');
+        alert('Дані секції "Витрата БК ПЗРК Игла-1" скопійовано до буферу обміну!');
     });
 }
 
 function shareIglaData() {
     const form = document.getElementById('dataForm');
-    let dataString = 'Розхід Б.К. ПЗРК Игла-1:\n';
+    let dataString = 'Витрата БК ПЗРК Игла-1:\n';
 
     const keys = [
         { id: 'bk-usage', label: 'НДЖ' },
@@ -157,7 +157,7 @@ function shareIglaData() {
 
     if (navigator.share) {
         navigator.share({
-            title: 'Дані секції "Розхід Б.К. ПЗРК Игла-1"',
+            title: 'Дані секції "Витрата БК ПЗРК Игла-1"',
             text: dataString,
         }).catch(error => console.error('Помилка при спробі поділитися даними:', error));
     } else {
@@ -204,7 +204,7 @@ function copyAllData() {
         }
     });
 
-    dataString += '\nРасход БК АК-74/5.45:\n';
+    dataString += '\nВитрата БК АК-74/5.45:\n';
     akSectionKeys.forEach(({ id, label }) => {
         const value = form[id].value;
         if (value) {
@@ -212,7 +212,7 @@ function copyAllData() {
         }
     });
 
-    dataString += '\nРозхід Б.К. ПЗРК Игла-1:\n';
+    dataString += '\nВитрата БК ПЗРК Игла-1:\n';
     iglaSectionKeys.forEach(({ id, label }) => {
         const value = form[id].value;
         if (value) {
@@ -264,7 +264,7 @@ function shareAllData() {
         }
     });
 
-    dataString += '\nРасход БК АК-74/5.45:\n';
+    dataString += '\nВитрата БК АК-74/5.45:\n';
     akSectionKeys.forEach(({ id, label }) => {
         const value = form[id].value;
         if (value) {
@@ -272,7 +272,7 @@ function shareAllData() {
         }
     });
 
-    dataString += '\nРозхід Б.К. ПЗРК Игла-1:\n';
+    dataString += '\nВитрата БК ПЗРК Игла-1:\n';
     iglaSectionKeys.forEach(({ id, label }) => {
         const value = form[id].value;
         if (value) {
