@@ -1,69 +1,79 @@
+/* Устанавливаем фон и цвет текста для всего документа */
 body {
-    background-color: #2c2c2c;
-    color: #b0b0b0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #2c2c2c; /* Темный фон для тела страницы */
+    color: #b0b0b0; /* Светло-серый цвет текста */
+    font-family: Arial, sans-serif; /* Шрифт Arial для текста */
+    margin: 0; /* Убираем отступы по умолчанию */
+    padding: 0; /* Убираем внутренние отступы по умолчанию */
 }
 
+/* Контейнер для содержимого с ограниченной шириной */
 .container {
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #3a3a3a;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 300px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Центрируем контейнер с отступом сверху и снизу */
+    padding: 20px; /* Внутренние отступы контейнера */
+    background-color: #3a3a3a; /* Темный фон для контейнера */
+    border-radius: 10px; /* Закругленные углы контейнера */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень для контейнера */
 }
 
+/* Заголовки первого и второго уровней */
 h1, h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
+    color: #ffffff; /* Белый цвет для заголовков */
+    margin-bottom: 10px; /* Отступ снизу заголовков */
 }
 
+/* Метки для форм */
 label {
-    display: block;
-    margin: 10px 0 5px;
+    display: block; /* Отображаем метки как блочные элементы */
+    margin: 10px 0 5px; /* Отступы для меток */
 }
 
+/* Поля ввода для различных типов данных */
 input[type="text"], 
 input[type="time"], 
 input[type="date"], 
 input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #b0b0b0;
-    border-radius: 5px;
-    background-color: #2c2c2c;
-    color: #ffffff;
+    width: calc(100% - 20px); /* Ширина поля ввода с учетом отступов */
+    padding: 8px; /* Внутренние отступы для полей ввода */
+    margin-bottom: 10px; /* Отступ снизу полей ввода */
+    border: 1px solid #b0b0b0; /* Светло-серая рамка для полей ввода */
+    border-radius: 5px; /* Закругленные углы полей ввода */
+    background-color: #2c2c2c; /* Темный фон для полей ввода */
+    color: #ffffff; /* Белый цвет текста в полях ввода */
 }
 
+/* Стиль для полей ввода с единицами измерения */
 .input-with-unit {
-    display: flex;
-    align-items: center;
+    display: flex; /* Используем флекс-контейнер для выравнивания */
+    align-items: center; /* Выравниваем элементы по центру */
 }
 
+/* Стиль для единиц измерения рядом с полем ввода */
 .input-with-unit .unit {
-    margin-left: 5px;
-    color: #ffffff;
+    margin-left: 5px; /* Отступ слева для единицы измерения */
+    color: #ffffff; /* Белый цвет для единицы измерения */
 }
 
+/* Группа кнопок для управления */
 .button-group {
-    display: flex;
-    justify-content: space-between;
-    margin: 25px 0;
+    display: flex; /* Используем флекс-контейнер для выравнивания кнопок */
+    justify-content: space-between; /* Распределяем кнопки по краям */
+    margin: 25px 0; /* Отступы сверху и снизу для группы кнопок */
 }
 
+/* Стиль для кнопок */
 button {
-    background-color: #5c5c5c;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold; /* Made the button text bold */
+    background-color: #5c5c5c; /* Темный фон для кнопок */
+    color: #ffffff; /* Белый цвет текста на кнопках */
+    border: none; /* Убираем рамку у кнопок */
+    padding: 10px 20px; /* Внутренние отступы для кнопок */
+    border-radius: 5px; /* Закругленные углы кнопок */
+    cursor: pointer; /* Указатель курсора при наведении */
+    font-weight: bold; /* Сделали текст кнопки жирным */
 }
 
+/* Эффект при наведении на кнопку */
 button:hover {
-    background-color: #727272;
+    background-color: #727272; /* Изменяем фон кнопки при наведении */
 }
